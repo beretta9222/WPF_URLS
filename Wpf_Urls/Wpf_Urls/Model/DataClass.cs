@@ -30,14 +30,21 @@ namespace Wpf_Urls.Model
         /// <param name="list">output data for view</param>
         public static void getUrlsCount(string[] urls, ref List<DataClass> list)
         {
-            List<DataClass> data = new List<DataClass>();
-            Parallel.ForEach(urls, x =>
-             {
-                 string res = GetCode(x);
-                 int count = new Regex("<a ").Matches(res).Count;                 
-                 data.Add(new DataClass() { Name = x, UrlsCount = count });
-             });
-            list = data;             
+            try
+            {
+                List<DataClass> data = new List<DataClass>();
+                Parallel.ForEach(urls, x =>
+                 {
+                     string res = GetCode(x);
+                     int count = new Regex("<a ").Matches(res).Count;
+                     data.Add(new DataClass() { Name = x, UrlsCount = count });
+                 });
+                list = data;
+            }
+            catch (Exception ex)
+            {
+                Log.WriteLod(ex.StackTrace);
+            }
         }
 
         /// <summary>
@@ -48,19 +55,27 @@ namespace Wpf_Urls.Model
         private static string GetCode(string urlAddress)
         {
             string data = "";
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(urlAddress);
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            if (response.StatusCode == HttpStatusCode.OK)
+            try
             {
-                using (Stream receiveStream = response.GetResponseStream())
-                using (StreamReader readStream = new StreamReader(receiveStream, Encoding.GetEncoding(response.CharacterSet)))
-                {                   
-                    data = readStream.ReadToEnd();
-                    response.Close();
-                    readStream.Close();
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(urlAddress);
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    using (Stream receiveStream = response.GetResponseStream())
+                    using (StreamReader readStream = new StreamReader(receiveStream, Encoding.GetEncoding(response.CharacterSet)))
+                    {
+                        data = readStream.ReadToEnd();
+                        response.Close();
+                        readStream.Close();
+                    }
                 }
+                return data;
             }
-            return data;
+            catch (Exception ex)
+            {
+                Log.WriteLod(ex.StackTrace);
+                return "";
+            }
         }
     }
 }
