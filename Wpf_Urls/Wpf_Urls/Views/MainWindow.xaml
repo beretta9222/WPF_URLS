@@ -5,16 +5,43 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:tel ="http://schemas.telerik.com/2008/xaml/presentation"
         xmlns:local="clr-namespace:Wpf_Urls"
+        xmlns:model="clr-namespace:Wpf_Urls.ViewModel"
+        xmlns:convert="clr-namespace:Wpf_Urls.Helpers"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>       
+        <convert:FontConverter x:Key="Converter" />
+    </Window.Resources>
+    <Window.DataContext>
+        <model:MainViewModel x:Name="model"/>
+    </Window.DataContext>
     <tel:RadBusyIndicator x:Name="busy" IsBusy="{Binding Busy}">
         <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>       
-        <Button Command="{Binding Load}" Content="Load" Margin="5"/>
-        <tel:RadGridView x:Name="grid" ItemsSource="{Binding List, Mode=TwoWay}" IsReadOnly="True" ShowGroupPanel="False" Grid.Row="1"/>       
-    </Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button Command="{Binding Load}" Content="Load" Margin="5"/>
+            <tel:RadGridView x:Name="grid" ItemsSource="{Binding List, Mode=TwoWay}" IsReadOnly="True" ShowGroupPanel="False" Grid.Row="1" AutoGenerateColumns="False">
+                <tel:RadGridView.Columns>
+                    <tel:GridViewDataColumn DataMemberBinding="{Binding Name}" Header="Url"/>
+                    <tel:GridViewDataColumn DataMemberBinding="{Binding UrlsCount}" Header="Count"/>
+                </tel:RadGridView.Columns>
+                <tel:RadGridView.RowStyle>
+                    <Style TargetType="tel:GridViewRow">
+                        <Setter Property="Background">
+                            <Setter.Value>
+                                <MultiBinding Converter="{StaticResource ResourceKey=Converter}">
+                                    <MultiBinding.Bindings>
+                                        <Binding Path="Avg"/>
+                                        <Binding Path="UrlsCount"/>
+                                    </MultiBinding.Bindings>
+                                </MultiBinding>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </tel:RadGridView.RowStyle>
+            </tel:RadGridView>
+        </Grid>
     </tel:RadBusyIndicator>
 </Window>

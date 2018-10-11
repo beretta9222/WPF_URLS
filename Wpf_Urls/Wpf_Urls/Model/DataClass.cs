@@ -22,7 +22,10 @@ namespace Wpf_Urls.Model
         /// Count urls in current url
         /// </summary>
         public int UrlsCount { get; set; }
-
+        /// <summary>
+        /// Count urls in current url
+        /// </summary>
+        public int Avg { get; set; }
         /// <summary>
         /// Calculate counts urls in current url
         /// </summary>

@@ -48,3 +48,4 @@ C:\Users\bi-td\Documents\Visual Studio 2015\Projects\Wpf_Urls\Wpf_Urls\obj\Debug
 C:\Users\bi-td\Documents\Visual Studio 2015\Projects\Wpf_Urls\Wpf_Urls\obj\Debug\Wpf_Urls.csproj.GenerateResource.Cache
 C:\Users\bi-td\Documents\Visual Studio 2015\Projects\Wpf_Urls\Wpf_Urls\obj\Debug\Wpf_Urls.exe
 C:\Users\bi-td\Documents\Visual Studio 2015\Projects\Wpf_Urls\Wpf_Urls\obj\Debug\Wpf_Urls.pdb
+C:\Users\bi-td\Documents\Visual Studio 2015\Projects\Wpf_Urls\Wpf_Urls\obj\Debug\GeneratedInternalTypeHelper.g.cs

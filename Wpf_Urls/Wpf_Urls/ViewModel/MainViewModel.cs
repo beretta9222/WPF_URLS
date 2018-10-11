@@ -11,8 +11,9 @@ using Wpf_Urls.Model;
 
 namespace Wpf_Urls.ViewModel
 {
-    public class MainViewModel: ViewModelBase
+    public class MainViewModel : ViewModelBase
     {
+       
         /// <summary>
         /// List of url & count url 
         /// </summary>
@@ -46,7 +47,7 @@ namespace Wpf_Urls.ViewModel
                 RaisePropertyChanged(() => Busy);
             }
         }
-
+      
         /// <summary>
         /// command for load file
         /// </summary>
@@ -55,7 +56,7 @@ namespace Wpf_Urls.ViewModel
         {
             get
             {
-                return load ?? (load = new RelayCommand(() => 
+                return load ?? (load = new RelayCommand(() =>
                 {
                     try
                     {
@@ -70,18 +71,24 @@ namespace Wpf_Urls.ViewModel
                             string[] url = str.Split(new char[] { '\n' });
                             List<DataClass> data = new List<DataClass>();
                             DataClass.getUrlsCount(url, ref data);
-                            List = data;                            
-                        } 
+                            int avg = (int)data.Average(x=>x.UrlsCount);
+                            List = data.Select(x => new DataClass
+                            {
+                                Name = x.Name,
+                                UrlsCount = x.UrlsCount,
+                                Avg = avg
+                            }).ToList();
+                        }
                     }
-                    catch(Exception ex)
+                    catch (Exception ex)
                     {
                         Log.WriteLod(ex.StackTrace);
-                    } 
+                    }
                     finally
                     {
                         Busy = false;
-                    }                   
-                })); 
+                    }
+                }));
             }
         }
     }

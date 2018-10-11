@@ -1,0 +1,28 @@
+11.10.2018 17:25:39; err:   в System.Net.HttpWebRequest.GetResponse()
+   в Wpf_Urls.Model.DataClass.GetCode(String urlAddress) в C:\Users\bi-td\Documents\Visual Studio 2015\Projects\Wpf_Urls\Wpf_Urls\Model\DataClass.cs:строка 61
+11.10.2018 17:25:58; err:   в System.Net.HttpWebRequest.GetResponse()
+   в Wpf_Urls.Model.DataClass.GetCode(String urlAddress) в C:\Users\bi-td\Documents\Visual Studio 2015\Projects\Wpf_Urls\Wpf_Urls\Model\DataClass.cs:строка 61
+11.10.2018 18:22:04; err:   в System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   в System.Uri..ctor(String uriString)
+   в System.Net.WebRequest.Create(String requestUriString)
+   в Wpf_Urls.Model.DataClass.GetCode(String urlAddress) в C:\Users\bi-td\Documents\Visual Studio 2015\Projects\Wpf_Urls\Wpf_Urls\Model\DataClass.cs:строка 60
+11.10.2018 18:30:12; err:   в System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   в System.Uri..ctor(String uriString)
+   в System.Net.WebRequest.Create(String requestUriString)
+   в Wpf_Urls.Model.DataClass.GetCode(String urlAddress) в C:\Users\bi-td\Documents\Visual Studio 2015\Projects\Wpf_Urls\Wpf_Urls\Model\DataClass.cs:строка 60
+11.10.2018 18:55:40; err:   в System.Net.HttpWebRequest.GetResponse()
+   в Wpf_Urls.Model.DataClass.GetCode(String urlAddress) в C:\Users\bi-td\Documents\Visual Studio 2015\Projects\Wpf_Urls\Wpf_Urls\Model\DataClass.cs:строка 64
+11.10.2018 18:56:20; err:   в System.Net.HttpWebRequest.GetResponse()
+   в Wpf_Urls.Model.DataClass.GetCode(String urlAddress) в C:\Users\bi-td\Documents\Visual Studio 2015\Projects\Wpf_Urls\Wpf_Urls\Model\DataClass.cs:строка 64
+11.10.2018 18:56:20; err:   в System.Net.HttpWebRequest.GetResponse()
+   в Wpf_Urls.Model.DataClass.GetCode(String urlAddress) в C:\Users\bi-td\Documents\Visual Studio 2015\Projects\Wpf_Urls\Wpf_Urls\Model\DataClass.cs:строка 64
+11.10.2018 18:56:21; err:   в System.Net.HttpWebRequest.GetResponse()
+   в Wpf_Urls.Model.DataClass.GetCode(String urlAddress) в C:\Users\bi-td\Documents\Visual Studio 2015\Projects\Wpf_Urls\Wpf_Urls\Model\DataClass.cs:строка 64
+11.10.2018 18:56:53; err:   в System.Net.HttpWebRequest.GetResponse()
+   в Wpf_Urls.Model.DataClass.GetCode(String urlAddress) в C:\Users\bi-td\Documents\Visual Studio 2015\Projects\Wpf_Urls\Wpf_Urls\Model\DataClass.cs:строка 64
+11.10.2018 18:56:53; err:   в System.Net.HttpWebRequest.GetResponse()
+   в Wpf_Urls.Model.DataClass.GetCode(String urlAddress) в C:\Users\bi-td\Documents\Visual Studio 2015\Projects\Wpf_Urls\Wpf_Urls\Model\DataClass.cs:строка 64
+11.10.2018 18:56:53; err:   в System.Net.HttpWebRequest.GetResponse()
+   в Wpf_Urls.Model.DataClass.GetCode(String urlAddress) в C:\Users\bi-td\Documents\Visual Studio 2015\Projects\Wpf_Urls\Wpf_Urls\Model\DataClass.cs:строка 64
+11.10.2018 18:56:53; err:   в System.Net.HttpWebRequest.GetResponse()
+   в Wpf_Urls.Model.DataClass.GetCode(String urlAddress) в C:\Users\bi-td\Documents\Visual Studio 2015\Projects\Wpf_Urls\Wpf_Urls\Model\DataClass.cs:строка 64

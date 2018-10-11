@@ -20,12 +20,9 @@ namespace Wpf_Urls
     /// </summary>
     public partial class MainWindow : Window
     {
-        ViewModel.MainViewModel model;
         public MainWindow()
         {
-            model = new ViewModel.MainViewModel();
             InitializeComponent();
-            this.DataContext = model;
         }
     }
 }
